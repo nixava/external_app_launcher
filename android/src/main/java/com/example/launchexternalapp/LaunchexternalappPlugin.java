@@ -78,7 +78,7 @@ public class LaunchexternalappPlugin implements MethodCallHandler, FlutterPlugin
     if (isAppInstalled(packageName)) {
       //Intent launchIntent = context.getPackageManager().getLaunchIntentForPackage(packageName);
       Intent launchIntent = new Intent();    
-      launchIntent.setClassName("package.name", packageName);
+      launchIntent.setClassName(packageName, packageName + ".MainActivity");
       if (launchIntent != null) {
         // null pointer check in case package name was not found
         launchIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
